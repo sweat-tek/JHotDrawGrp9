@@ -103,6 +103,27 @@ public class FontToolBar extends AbstractToolBar {
         }
     }
 
+    public void addFaceField(JPanel p, ResourceBundleUtil labels, int column, int width){
+        JAttributeTextField<Font> faceField = new JAttributeTextField<>();
+        faceField.setColumns(column);
+        faceField.setToolTipText(labels.getString("attribute.font.toolTipText"));
+        faceField.setHorizontalAlignment(JAttributeTextField.RIGHT);
+        faceField.putClientProperty("Palette.Component.segmentPosition", "first");
+        faceField.setUI((PaletteFormattedTextFieldUI) PaletteFormattedTextFieldUI.createUI(faceField));
+        faceField.setHorizontalAlignment(JTextField.LEADING);
+        faceField.setFormatterFactory(FontFormatter.createFormatterFactory());
+        disposables.add(new FigureAttributeEditorHandler<Font>(FONT_FACE, faceField, editor));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(0, 0, 0, 0);
+        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
+        gbc.gridwidth = width;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        p.add(faceField, gbc);
+    }
+
+
     @Override
     protected JComponent createDisclosedComponent(int state) {
         JPanel p = null;
@@ -126,30 +147,18 @@ public class FontToolBar extends AbstractToolBar {
                 p.setLayout(layout);
                 GridBagConstraints gbc;
                 AbstractButton btn;
-                // Font face field and popup button
-                JAttributeTextField<Font> faceField = new JAttributeTextField<Font>();
-                faceField.setColumns(2);
-                faceField.setToolTipText(labels.getString("attribute.font.toolTipText"));
-                faceField.setHorizontalAlignment(JAttributeTextField.RIGHT);
-                faceField.putClientProperty("Palette.Component.segmentPosition", "first");
-                faceField.setUI((PaletteFormattedTextFieldUI) PaletteFormattedTextFieldUI.createUI(faceField));
-                faceField.setHorizontalAlignment(JTextField.LEADING);
-                faceField.setFormatterFactory(FontFormatter.createFormatterFactory());
-                disposables.add(new FigureAttributeEditorHandler<Font>(FONT_FACE, faceField, editor));
-                gbc = new GridBagConstraints();
-                gbc.gridx = 0;
-                gbc.gridy = 0;
-                gbc.insets = new Insets(0, 0, 0, 0);
-                gbc.anchor = GridBagConstraints.FIRST_LINE_START;
-                gbc.gridwidth = 2;
-                gbc.fill = GridBagConstraints.HORIZONTAL;
-                p.add(faceField, gbc);
+
+                //Font face field
+                addFaceField(p, labels, 2, 2);
+
+                //popup button
                 btn = ButtonFactory.createFontButton(editor, FONT_FACE, labels, disposables);
                 btn.setUI((PaletteButtonUI) PaletteButtonUI.createUI(btn));
-                gbc = new GridBagConstraints();
+                GridBagConstraints gbc = new GridBagConstraints();
                 gbc.gridwidth = GridBagConstraints.REMAINDER;
                 gbc.anchor = GridBagConstraints.WEST;
                 p.add(btn, gbc);
+
                 // Font size field with slider
                 JAttributeTextField<Double> sizeField = new JAttributeTextField<Double>();
                 sizeField.setColumns(1);
@@ -235,8 +244,9 @@ public class FontToolBar extends AbstractToolBar {
                 labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
                 layout = new GridBagLayout();
                 p.setLayout(layout);
+                
                 // Font face field and popup button
-                faceField = new JAttributeTextField<Font>();
+                JAttributeTextField<Font> faceField = new JAttributeTextField<Font>();
                 faceField.setColumns(12);
                 faceField.setToolTipText(labels.getString("attribute.font.toolTipText"));
                 faceField.setHorizontalAlignment(JAttributeTextField.RIGHT);
@@ -253,6 +263,8 @@ public class FontToolBar extends AbstractToolBar {
                 gbc.gridwidth = 3;
                 gbc.fill = GridBagConstraints.HORIZONTAL;
                 p.add(faceField, gbc);
+
+
                 btn = ButtonFactory.createFontButton(editor, FONT_FACE, labels, disposables);
                 btn.setUI((PaletteButtonUI) PaletteButtonUI.createUI(btn));
                 gbc = new GridBagConstraints();
