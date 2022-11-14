@@ -79,7 +79,7 @@
 				<executions>
 					<execution>
 						<id>verify-style</id>
-						<phase>process-classes</phase>
+						<phase>none</phase>
 						<goals>
 							<goal>check</goal>
 						</goals>
