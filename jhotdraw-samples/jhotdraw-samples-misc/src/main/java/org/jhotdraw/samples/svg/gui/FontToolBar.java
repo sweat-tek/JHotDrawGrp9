@@ -123,6 +123,14 @@ public class FontToolBar extends AbstractToolBar {
         p.add(faceField, gbc);
     }
 
+    public void addPopUpButton(JPanel p, ResourceBundleUtil labels){
+        AbstractButton btn = ButtonFactory.createFontButton(editor, FONT_FACE, labels, disposables);
+        btn.setUI((PaletteButtonUI) PaletteButtonUI.createUI(btn));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.anchor = GridBagConstraints.WEST;
+        p.add(btn, gbc);
+    }
 
     @Override
     protected JComponent createDisclosedComponent(int state) {
@@ -152,12 +160,7 @@ public class FontToolBar extends AbstractToolBar {
                 addFaceField(p, labels, 2, 2);
 
                 //popup button
-                btn = ButtonFactory.createFontButton(editor, FONT_FACE, labels, disposables);
-                btn.setUI((PaletteButtonUI) PaletteButtonUI.createUI(btn));
-                GridBagConstraints gbc = new GridBagConstraints();
-                gbc.gridwidth = GridBagConstraints.REMAINDER;
-                gbc.anchor = GridBagConstraints.WEST;
-                p.add(btn, gbc);
+                addPopUpButton(p, labels);
 
                 // Font size field with slider
                 JAttributeTextField<Double> sizeField = new JAttributeTextField<Double>();
