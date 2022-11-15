@@ -209,77 +209,42 @@ public class FontToolBar extends AbstractToolBar {
     @Override
     protected JComponent createDisclosedComponent(int state) {
         JPanel p = null;
-        switch (state) {
-            case 1: 
-                p = new JPanel();
-                p.setOpaque(false);
-                p.setBorder(new EmptyBorder(5, 5, 5, 8));
-                // Abort if no editor is set
-                if (editor == null) {
-                    break;
-                }
-                JPanel p1 = new JPanel(new GridBagLayout());
-                JPanel p2 = new JPanel(new GridBagLayout());
-                JPanel p3 = new JPanel(new GridBagLayout());
-                p1.setOpaque(false);
-                p2.setOpaque(false);
-                p3.setOpaque(false);
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
-                GridBagLayout layout = new GridBagLayout();
-                p.setLayout(layout);
-                GridBagConstraints gbc;
-                AbstractButton btn;
+        p = new JPanel();
+        p.setOpaque(false);
+        p.setBorder(new EmptyBorder(5, 5, 5, 8));
+        JPanel p1 = new JPanel(new GridBagLayout());
+        JPanel p2 = new JPanel(new GridBagLayout());
+        p1.setOpaque(false);
+        p2.setOpaque(false);
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        GridBagLayout layout = new GridBagLayout();
+        p.setLayout(layout);
 
-                //Font face field
-                addFaceField(p, labels, 2, 2);
-
-                //popup button
-                addPopUpButton(p, labels);
-
-                //Font size field
-                addFontSizeField(p2, labels);
-
-                //Font size field slider
-                addFontSizeFieldSlider(p, p2, labels);
-
-                // Font style buttons
-                addFontStyleButtons(p, labels);
-            
-            break;
-            case 2: 
-                p = new JPanel();
-                p.setOpaque(false);
-                p.setBorder(new EmptyBorder(5, 5, 5, 8));
-                // Abort if no editor is set
-                if (editor == null) {
-                    break;
-                }
-                p1 = new JPanel(new GridBagLayout());
-                p2 = new JPanel(new GridBagLayout());
-                p3 = new JPanel(new GridBagLayout());
-                p1.setOpaque(false);
-                p2.setOpaque(false);
-                p3.setOpaque(false);
-                labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
-                layout = new GridBagLayout();
-                p.setLayout(layout);
-
-                //Font face field
-                addFaceField(p, labels, 12, 3);
-
-                //popup button
-                addPopUpButton(p, labels);
-
-                //Font size field
-                addFontSizeField(p2, labels);
-
-                //Font size field slider
-                addFontSizeFieldSlider(p, p2, labels);
-
-                // Font style buttons
-                addFontStyleButtons(p, labels);
-
-            break;
+        if(state == 1)
+        {
+            //Font face field
+            addFaceField(p, labels, 2, 2);
+            //popup button
+            addPopUpButton(p, labels);
+            //Font size field
+            addFontSizeField(p2, labels);
+            //Font size field slider
+            addFontSizeFieldSlider(p, p2, labels);
+            // Font style buttons
+            addFontStyleButtons(p, labels);
+        }
+        else if(state == 2)
+        {
+            //Font face field
+            addFaceField(p, labels, 12, 3);
+            //popup button
+            addPopUpButton(p, labels);
+            //Font size field
+            addFontSizeField(p2, labels);
+            //Font size field slider
+            addFontSizeFieldSlider(p, p2, labels);
+            // Font style buttons
+            addFontStyleButtons(p, labels);
         }
         return p;
     }
