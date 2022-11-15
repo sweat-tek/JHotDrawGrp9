@@ -132,6 +132,54 @@ public class FontToolBar extends AbstractToolBar {
         p.add(btn, gbc);
     }
 
+    public void addFontSizeField(JPanel p, ResourceBundleUtil labels){
+        JAttributeTextField<Double> sizeField = new JAttributeTextField<Double>();
+        sizeField.setColumns(1);
+        sizeField.setToolTipText(labels.getString("attribute.fontSize.toolTipText"));
+        sizeField.setHorizontalAlignment(JAttributeTextField.RIGHT);
+        sizeField.putClientProperty("Palette.Component.segmentPosition", "first");
+        sizeField.setUI((PaletteFormattedTextFieldUI) PaletteFormattedTextFieldUI.createUI(sizeField));
+        sizeField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d, 1000d, 1d));
+        sizeField.setHorizontalAlignment(JTextField.LEADING);
+        disposables.add(new FigureAttributeEditorHandler<Double>(FONT_SIZE, sizeField, editor));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.insets = new Insets(3, 0, 0, 0);
+        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
+        gbc.gridwidth = 2;
+        gbc.weightx = 1f;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        p.add(sizeField, gbc);
+    }
+
+    public void addFontSizeFieldSlider(JPanel p, JPanel p2, ResourceBundleUtil labels){
+        JPopupButton sizePopupButton = new JPopupButton();
+        JAttributeSlider sizeSlider = new JAttributeSlider(JSlider.VERTICAL, 0, 100, 12);
+        sizePopupButton.add(sizeSlider);
+        labels.configureToolBarButton(sizePopupButton, "attribute.fontSize");
+        sizePopupButton.setUI((PaletteButtonUI) PaletteButtonUI.createUI(sizePopupButton));
+        sizePopupButton.setPopupAnchor(SOUTH_EAST);
+        disposables.add(new SelectionComponentRepainter(editor, sizePopupButton));
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 2;
+        gbc.gridy = 1;
+        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
+        gbc.insets = new Insets(3, 0, 0, 0);
+        p2.add(sizePopupButton, gbc);
+        sizeSlider.setUI((SliderUI) PaletteSliderUI.createUI(sizeSlider));
+        sizeSlider.setScaleFactor(1d);
+        disposables.add(new FigureAttributeEditorHandler<Double>(FONT_SIZE, sizeSlider, editor));
+        gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.anchor = GridBagConstraints.FIRST_LINE_START;
+        gbc.insets = new Insets(0, 0, 0, 0);
+        p.add(p2, gbc);
+    }
+
     @Override
     protected JComponent createDisclosedComponent(int state) {
         JPanel p = null;
@@ -162,51 +210,11 @@ public class FontToolBar extends AbstractToolBar {
                 //popup button
                 addPopUpButton(p, labels);
 
-                // Font size field with slider
-                JAttributeTextField<Double> sizeField = new JAttributeTextField<Double>();
-                sizeField.setColumns(1);
-                sizeField.setToolTipText(labels.getString("attribute.fontSize.toolTipText"));
-                sizeField.setHorizontalAlignment(JAttributeTextField.RIGHT);
-                sizeField.putClientProperty("Palette.Component.segmentPosition", "first");
-                sizeField.setUI((PaletteFormattedTextFieldUI) PaletteFormattedTextFieldUI.createUI(sizeField));
-                sizeField.setFormatterFactory(JavaNumberFormatter.createFormatterFactory(0d, 1000d, 1d));
-                sizeField.setHorizontalAlignment(JTextField.LEADING);
-                disposables.add(new FigureAttributeEditorHandler<Double>(FONT_SIZE, sizeField, editor));
-                gbc = new GridBagConstraints();
-                gbc.gridx = 0;
-                gbc.gridy = 1;
-                gbc.insets = new Insets(3, 0, 0, 0);
-                gbc.anchor = GridBagConstraints.FIRST_LINE_START;
-                gbc.gridwidth = 2;
-                gbc.weightx = 1f;
-                gbc.fill = GridBagConstraints.HORIZONTAL;
-                p2.add(sizeField, gbc);
+                //Font size field
+                addFontSizeField(p2, labels);
 
-                JPopupButton sizePopupButton = new JPopupButton();
-                JAttributeSlider sizeSlider = new JAttributeSlider(JSlider.VERTICAL, 0, 100, 12);
-                sizePopupButton.add(sizeSlider);
-                labels.configureToolBarButton(sizePopupButton, "attribute.fontSize");
-                sizePopupButton.setUI((PaletteButtonUI) PaletteButtonUI.createUI(sizePopupButton));
-                sizePopupButton.setPopupAnchor(SOUTH_EAST);
-                disposables.add(new SelectionComponentRepainter(editor, sizePopupButton));
-                gbc = new GridBagConstraints();
-                gbc.gridx = 2;
-                gbc.gridy = 1;
-                gbc.anchor = GridBagConstraints.FIRST_LINE_START;
-                gbc.insets = new Insets(3, 0, 0, 0);
-                p2.add(sizePopupButton, gbc);
-
-                sizeSlider.setUI((SliderUI) PaletteSliderUI.createUI(sizeSlider));
-                sizeSlider.setScaleFactor(1d);
-                disposables.add(new FigureAttributeEditorHandler<Double>(FONT_SIZE, sizeSlider, editor));
-                gbc = new GridBagConstraints();
-                gbc.gridx = 0;
-                gbc.gridy = 1;
-                gbc.gridwidth = 2;
-                gbc.fill = GridBagConstraints.BOTH;
-                gbc.anchor = GridBagConstraints.FIRST_LINE_START;
-                gbc.insets = new Insets(0, 0, 0, 0);
-                p.add(p2, gbc);
+                //Font size field slider
+                addFontSizeFieldSlider(p, p2, labels);
 
                 // Font style buttons
                 btn = ButtonFactory.createFontStyleBoldButton(editor, labels, disposables);
@@ -258,7 +266,7 @@ public class FontToolBar extends AbstractToolBar {
                 addPopUpButton(p, labels);
 
                 // Font size field with slider
-                sizeField = new JAttributeTextField<Double>();
+                JAttributeTextField<Double> sizeField = new JAttributeTextField<>();
                 sizeField.setColumns(1);
                 sizeField.setToolTipText(labels.getString("attribute.fontSize.toolTipText"));
                 sizeField.setHorizontalAlignment(JAttributeTextField.RIGHT);
@@ -277,8 +285,8 @@ public class FontToolBar extends AbstractToolBar {
                 gbc.fill = GridBagConstraints.HORIZONTAL;
                 p2.add(sizeField, gbc);
 
-                sizePopupButton = new JPopupButton();
-                sizeSlider = new JAttributeSlider(JSlider.VERTICAL, 0, 100, 12);
+                JPopupButton sizePopupButton = new JPopupButton();
+                JAttributeSlider sizeSlider = new JAttributeSlider(JSlider.VERTICAL, 0, 100, 12);
                 sizePopupButton.add(sizeSlider);
                 labels.configureToolBarButton(sizePopupButton, "attribute.fontSize");
                 sizePopupButton.setUI((PaletteButtonUI) PaletteButtonUI.createUI(sizePopupButton));
