@@ -219,30 +219,23 @@ public class FontToolBar extends AbstractToolBar {
         ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
         GridBagLayout layout = new GridBagLayout();
         p.setLayout(layout);
-        //Font size field
         addFontSizeField(p2, labels);
-        //Font size field slider
         addFontSizeFieldSlider(p, p2, labels);
-        // Font style buttons
         addFontStyleButtons(p, labels);
 
         if(state == 1)
         {
-            //Font face field
             addFaceField(p, labels, 2, 2);
-            //popup button
             addPopUpButton(p, labels);
         }
         else if(state == 2)
         {
-            //Font face field
             addFaceField(p, labels, 12, 3);
-            //popup button
             addPopUpButton(p, labels);
         }
         return p;
     }
-
+    
     @Override
     protected String getID() {
         return "font";
