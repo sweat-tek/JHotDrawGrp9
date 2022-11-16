@@ -205,7 +205,6 @@ public class FontToolBar extends AbstractToolBar {
         gbc.anchor = GridBagConstraints.WEST;
         p.add(btn, gbc);
     }
-
     @Override
     protected JComponent createDisclosedComponent(int state) {
         JPanel p = null;
