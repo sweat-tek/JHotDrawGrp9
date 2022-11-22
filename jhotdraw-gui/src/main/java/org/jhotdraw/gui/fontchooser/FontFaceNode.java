@@ -32,6 +32,24 @@ public class FontFaceNode implements MutableTreeNode, Comparable<FontFaceNode>, 
         this.name = beautifyName(typeface.getPSName());
     }
 
+    public String addSpacesToString(String name){
+        StringBuilder buf = new StringBuilder();
+        char prev = name.charAt(0);
+        buf.append(prev);
+        for (int i = 1; i < name.length(); i++) {
+            char ch = name.charAt(i);
+            if (prev != ' ' && prev != '-'
+                    && Character.isUpperCase(ch) && !Character.isUpperCase(prev)
+                    || Character.isDigit(ch) && !Character.isDigit(prev)) {
+                buf.append(' ');
+            }
+            buf.append(ch);
+            prev = ch;
+        }
+        name = buf.toString();
+        return name;
+    }
+
     protected String beautifyName(String name) {
         // 'Beautify' the name
         int p = name.lastIndexOf('-');
@@ -48,22 +66,7 @@ public class FontFaceNode implements MutableTreeNode, Comparable<FontFaceNode>, 
                 name = "Plain";
             }
         }
-
-        StringBuilder buf = new StringBuilder();
-        char prev = name.charAt(0);
-        buf.append(prev);
-        for (int i = 1; i < name.length(); i++) {
-            char ch = name.charAt(i);
-            if (prev != ' ' && prev != '-'
-                    && Character.isUpperCase(ch) && !Character.isUpperCase(prev)
-                    || Character.isDigit(ch) && !Character.isDigit(prev)) {
-                buf.append(' ');
-            }
-            buf.append(ch);
-            prev = ch;
-        }
-        name = buf.toString();
-        return name;
+        return addSpacesToString(name);
     }
 
     public void setName(String newValue) {
