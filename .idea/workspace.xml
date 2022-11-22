@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb0ef58c-1994-4d86-b65c-a3a386687e3b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontsDictionary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-gui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontFaceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontFaceNode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +120,7 @@
       <workItem from="1668438292284" duration="1421000" />
       <workItem from="1668515294444" duration="6703000" />
       <workItem from="1669056400319" duration="5006000" />
-      <workItem from="1669115914640" duration="6160000" />
+      <workItem from="1669115914640" duration="11078000" />
     </task>
     <servers />
   </component>
@@ -139,21 +137,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontFaceNode.java</url>
-          <line>32</line>
-          <properties class="org.jhotdraw.gui.fontchooser.FontFaceNode" method="beautifyName">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
