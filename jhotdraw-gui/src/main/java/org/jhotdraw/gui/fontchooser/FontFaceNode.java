@@ -79,6 +79,7 @@ public class FontFaceNode implements MutableTreeNode, Comparable<FontFaceNode>, 
                 name = "Plain";
             }
         }
+
         StringBuilder buf = new StringBuilder();
         char prev = name.charAt(0);
         buf.append(prev);
