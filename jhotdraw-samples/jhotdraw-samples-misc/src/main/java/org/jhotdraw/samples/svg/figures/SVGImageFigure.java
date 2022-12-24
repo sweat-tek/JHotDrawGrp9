@@ -195,23 +195,8 @@ public class SVGImageFigure extends SVGAttributedFigure implements SVGFigure, Im
      */
     @Override
     public void transform(AffineTransform tx) {
-        invalidateTransformedShape();
-        if (get(TRANSFORM) != null
-                || (tx.getType() & (AffineTransform.TYPE_TRANSLATION | AffineTransform.TYPE_MASK_SCALE)) != tx.getType()) {
-            if (get(TRANSFORM) == null) {
-                set(TRANSFORM, (AffineTransform) tx.clone());
-            } else {
-                AffineTransform t = TRANSFORM.getClone(this);
-                t.preConcatenate(tx);
-                set(TRANSFORM, t);
-            }
-        } else {
-            Point2D.Double anchor = getStartPoint();
-            Point2D.Double lead = getEndPoint();
-            setBounds(
-                    (Point2D.Double) tx.transform(anchor, anchor),
-                    (Point2D.Double) tx.transform(lead, lead));
-        }
+        super.transform2DPoint(tx);
+        super.transformAcessories(tx);
     }
 
     // ATTRIBUTES

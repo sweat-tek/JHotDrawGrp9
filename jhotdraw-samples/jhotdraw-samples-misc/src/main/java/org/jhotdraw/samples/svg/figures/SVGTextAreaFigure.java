@@ -305,37 +305,8 @@ public class SVGTextAreaFigure extends SVGAttributedFigure
      */
     @Override
     public void transform(AffineTransform tx) {
-        if (get(TRANSFORM) != null
-                || (tx.getType()
-                & (AffineTransform.TYPE_TRANSLATION /*| AffineTransform.TYPE_MASK_SCALE*/))
-                != tx.getType()) {
-            if (get(TRANSFORM) == null) {
-                set(TRANSFORM, (AffineTransform) tx.clone());
-            } else {
-                AffineTransform t = TRANSFORM.getClone(this);
-                t.preConcatenate(tx);
-                set(TRANSFORM, t);
-            }
-        } else {
-            Point2D.Double anchor = getStartPoint();
-            Point2D.Double lead = getEndPoint();
-            setBounds(
-                    (Point2D.Double) tx.transform(anchor, anchor),
-                    (Point2D.Double) tx.transform(lead, lead));
-            if (get(FILL_GRADIENT) != null
-                    && !get(FILL_GRADIENT).isRelativeToFigureBounds()) {
-                Gradient g = FILL_GRADIENT.getClone(this);
-                g.transform(tx);
-                set(FILL_GRADIENT, g);
-            }
-            if (get(STROKE_GRADIENT) != null
-                    && !get(STROKE_GRADIENT).isRelativeToFigureBounds()) {
-                Gradient g = STROKE_GRADIENT.getClone(this);
-                g.transform(tx);
-                set(STROKE_GRADIENT, g);
-            }
-        }
-        invalidate();
+        super.transform2DPoint(tx);
+        super.transformAcessories(tx);
     }
 
     @Override
