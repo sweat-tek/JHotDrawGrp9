@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27b2dbe9-3351-4651-bf15-2495da1f6cdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/DefaultFontChooserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/DefaultFontChooserModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

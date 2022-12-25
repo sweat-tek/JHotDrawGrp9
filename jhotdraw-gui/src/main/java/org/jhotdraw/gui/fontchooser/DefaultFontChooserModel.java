@@ -55,18 +55,7 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
         root = new DefaultMutableTreeNode();
         setFonts(fonts);
     }
-
-    /**
-     * Sets the fonts of the DefaultFontChooserModel.
-     * <p>
-     * Fires treeStructureChanged event on the root node.
-     *
-     * @param fonts
-     */
-    @SuppressWarnings("unchecked")
-    public void setFonts(Font[] fonts){
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
-        // collect families and sort them alphabetically
+    public ArrayList<FontFamilyNode> collectFontFamiliesSorted(Font[] fonts){
         ArrayList<FontFamilyNode> families = new ArrayList<>();
         HashMap<String, FontFamilyNode> familyMap = new HashMap<>();
         for (Font f : fonts) {
@@ -83,32 +72,47 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
         families.addAll(familyMap.values());
         Collections.sort(families);
 
+        return families;
+    }
+    /**
+     * Sets the fonts of the DefaultFontChooserModel.
+     * <p>
+     * Fires treeStructureChanged event on the root node.
+     *
+     * @param fonts
+     */
+    @SuppressWarnings("unchecked")
+    public void setFonts(Font[] fonts){
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+        // collect families and sort them alphabetically
+        ArrayList<FontFamilyNode> families = collectFontFamiliesSorted(fonts);
         // group families into collections
         root.removeAllChildren();
-        root.add(new FontCollectionNode(labels.getString("FontCollection.allFonts"), (ArrayList<FontFamilyNode>) families.clone()));
+        root.add(new FontCollectionNode(labels.getString("FontCollection.allFonts"),
+                (ArrayList<FontFamilyNode>) families.clone()));
         // Web-save fonts
-        root.add(
-                new FontCollectionNode(labels.getString("FontCollection.web"), collectFamiliesNamed(families, fontsList.get("web"))));
+        root.add(new FontCollectionNode(labels.getString("FontCollection.web"),
+                collectFamiliesNamed(families, fontsList.get("web"))));
         // Java System fonts
-        root.add(
-                new FontCollectionNode(labels.getString("FontCollection.system"), collectFamiliesNamed(families, fontsList.get("system"))));
+        root.add(new FontCollectionNode(labels.getString("FontCollection.system"),
+                collectFamiliesNamed(families, fontsList.get("system"))));
         // Serif fonts
-        root.add(
-                new FontCollectionNode(labels.getString("FontCollection.serif"), collectFamiliesNamed(families, fontsList.get("serif"))));
+        root.add(new FontCollectionNode(labels.getString("FontCollection.serif"),
+                collectFamiliesNamed(families, fontsList.get("serif"))));
         // Sans Serif
-        root.add(
-                new FontCollectionNode(labels.getString("FontCollection.sansSerif"), collectFamiliesNamed(families, fontsList.get("sansSerif"))));
+        root.add(new FontCollectionNode(labels.getString("FontCollection.sansSerif"),
+                collectFamiliesNamed(families, fontsList.get("sansSerif"))));
         // Scripts
-        root.add(
-                new FontCollectionNode(labels.getString("FontCollection.script"), collectFamiliesNamed(families, fontsList.get("script"))));
+        root.add(new FontCollectionNode(labels.getString("FontCollection.script"),
+                collectFamiliesNamed(families, fontsList.get("script"))));
         // Monospaced
-        root.add(
-                new FontCollectionNode(labels.getString("FontCollection.monospaced"), collectFamiliesNamed(families, fontsList.get("monospaced"))));
+        root.add(new FontCollectionNode(labels.getString("FontCollection.monospaced"),
+                collectFamiliesNamed(families, fontsList.get("monospaced"))));
         // Decorative
-        root.add(
-                new FontCollectionNode(labels.getString("FontCollection.decorative"), collectFamiliesNamed(families, fontsList.get("decorative"))));
-        root.add(
-                new FontCollectionNode(labels.getString("FontCollection.symbols"), collectFamiliesNamed(families, fontsList.get("symbols"))));
+        root.add(new FontCollectionNode(labels.getString("FontCollection.decorative"),
+                collectFamiliesNamed(families, fontsList.get("decorative"))));
+        root.add(new FontCollectionNode(labels.getString("FontCollection.symbols"),
+                collectFamiliesNamed(families, fontsList.get("symbols"))));
 
         // Collect font families, which are not in one of the other collections
         // (except the collection AllFonts).
