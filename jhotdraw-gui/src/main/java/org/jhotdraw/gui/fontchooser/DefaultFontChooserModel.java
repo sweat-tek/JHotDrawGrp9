@@ -8,6 +8,12 @@
 package org.jhotdraw.gui.fontchooser;
 
 import java.awt.*;
+import java.io.*;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.Array;
 import java.util.*;
 import javax.swing.tree.*;
 import org.jhotdraw.util.ResourceBundleUtil;
@@ -39,12 +45,13 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
      * Root node.
      */
     protected DefaultMutableTreeNode root;
+    Map<String, ArrayList<String>> fontsList = FontsListDictionary.getInstance().fontsList;
 
     public DefaultFontChooserModel() {
         root = new DefaultMutableTreeNode();
     }
 
-    public DefaultFontChooserModel(Font[] fonts) {
+    public DefaultFontChooserModel(Font[] fonts){
         root = new DefaultMutableTreeNode();
         setFonts(fonts);
     }
@@ -57,7 +64,7 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
      * @param fonts
      */
     @SuppressWarnings("unchecked")
-    public void setFonts(Font[] fonts) {
+    public void setFonts(Font[] fonts){
         ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
         // collect families and sort them alphabetically
         ArrayList<FontFamilyNode> families = new ArrayList<>();
@@ -75,6 +82,7 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
         }
         families.addAll(familyMap.values());
         Collections.sort(families);
+
         // group families into collections
         root.removeAllChildren();
         root.add(new FontCollectionNode(labels.getString("FontCollection.allFonts"), (ArrayList<FontFamilyNode>) families.clone()));
