@@ -74,6 +74,26 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
 
         return families;
     }
+
+    public void collectNotIncludedFamilies(ResourceBundleUtil labels, ArrayList<FontFamilyNode> families){
+        FontCollectionNode others = new FontCollectionNode(labels.getString("FontCollection.other"));
+        HashSet<FontFamilyNode> otherFamilySet = new HashSet<>();
+        otherFamilySet.addAll(families);
+        for (int i = 1, n = root.getChildCount(); i < n; i++) {
+            FontCollectionNode fcn = (FontCollectionNode) root.getChildAt(i);
+            for (FontFamilyNode ffn : fcn.families()) {
+                otherFamilySet.remove(ffn);
+            }
+        }
+        ArrayList<FontFamilyNode> otherFamilies = new ArrayList<>();
+        for (FontFamilyNode ffn : otherFamilySet) {
+            otherFamilies.add(ffn.clone());
+        }
+        Collections.sort(otherFamilies);
+        others.addAll(otherFamilies);
+        root.add(others);
+    }
+
     /**
      * Sets the fonts of the DefaultFontChooserModel.
      * <p>
@@ -113,25 +133,10 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
                 collectFamiliesNamed(families, fontsList.get("decorative"))));
         root.add(new FontCollectionNode(labels.getString("FontCollection.symbols"),
                 collectFamiliesNamed(families, fontsList.get("symbols"))));
-
         // Collect font families, which are not in one of the other collections
         // (except the collection AllFonts).
-        FontCollectionNode others = new FontCollectionNode(labels.getString("FontCollection.other"));
-        HashSet<FontFamilyNode> otherFamilySet = new HashSet<>();
-        otherFamilySet.addAll(families);
-        for (int i = 1, n = root.getChildCount(); i < n; i++) {
-            FontCollectionNode fcn = (FontCollectionNode) root.getChildAt(i);
-            for (FontFamilyNode ffn : fcn.families()) {
-                otherFamilySet.remove(ffn);
-            }
-        }
-        ArrayList<FontFamilyNode> otherFamilies = new ArrayList<>();
-        for (FontFamilyNode ffn : otherFamilySet) {
-            otherFamilies.add(ffn.clone());
-        }
-        Collections.sort(otherFamilies);
-        others.addAll(otherFamilies);
-        root.add(others);
+        collectNotIncludedFamilies(labels, families);
+
         fireTreeStructureChanged(this, new TreePath(root));
     }
 
@@ -147,7 +152,6 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
         }
         return coll;
     }
-
     @Override
     public boolean isEditable(MutableTreeNode node) {
         boolean result = true;
