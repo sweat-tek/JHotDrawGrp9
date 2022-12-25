@@ -31,7 +31,6 @@ import javax.swing.JToolBar;
 import javax.swing.SwingUtilities;
 import javax.swing.TransferHandler;
 
-import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.api.app.Disposable;
 import org.jhotdraw.draw.DefaultDrawingEditor;
 import org.jhotdraw.draw.Drawing;
@@ -106,7 +105,6 @@ public class SVGDrawingPanel extends JPanel implements Disposable {
     /**
      * Creates new instance.
      */
-    @FeatureEntryPoint(value = "SVGDrawingPanel")
     public SVGDrawingPanel() {
         labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
         try {
