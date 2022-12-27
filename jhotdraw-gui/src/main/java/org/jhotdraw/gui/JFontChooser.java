@@ -32,6 +32,7 @@ import org.jhotdraw.gui.plaf.palette.PaletteFontChooserUI;
  */
 public class JFontChooser extends JComponent {
 
+
     private static final long serialVersionUID = 1L;
     /**
      * @see #getUIClassID
@@ -89,6 +90,8 @@ public class JFontChooser extends JComponent {
     private int returnValue = ERROR_OPTION;
     // DIALOG
     private JDialog dialog = null;
+
+
     /**
      * This future is used to load fonts lazily
      */
@@ -390,6 +393,19 @@ public class JFontChooser extends JComponent {
      *
      * @param newValue
      */
+
+    public void searchInCurrentFamily(Font newValue){
+
+
+    }
+
+    public void searchInCurrentCollection(){
+
+    }
+
+    public void searchInAllCollections(){
+
+    }
     protected void updateSelectionPath(Font newValue) {
         if (newValue == null || selectionPath == null || selectionPath.getPathCount() != 4
                 || !((FontFaceNode) selectionPath.getLastPathComponent()).getFont().getFontName().equals(newValue.getFontName())) {
