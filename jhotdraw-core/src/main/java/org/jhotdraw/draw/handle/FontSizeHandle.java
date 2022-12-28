@@ -97,31 +97,7 @@ public class FontSizeHandle extends LocatorHandle {
     public void trackEnd(Point anchor, Point lead, int modifiersEx) {
         final TextHolderFigure textOwner = (TextHolderFigure) getOwner();
         final Object editRestoreData = restoreData;
-        final float editNewSize = newSize;
-        UndoableEdit edit = new AbstractUndoableEdit() {
-            private static final long serialVersionUID = 1L;
-
-            @Override
-            public String getPresentationName() {
-                ResourceBundleUtil labels
-                        = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-                return labels.getString("attribute.fontSize.text");
-            }
-            @Override
-            public void undo() {
-                super.undo();
-                textOwner.willChange();
-                textOwner.restoreAttributesTo(editRestoreData);
-                textOwner.changed();
-            }
-            @Override
-            public void redo() {
-                super.redo();
-                textOwner.willChange();
-                textOwner.setFontSize(newSize);
-                textOwner.changed();
-            }
-        };
+        UndoableEdit edit = undoableEdit(textOwner, editRestoreData, "org.jhotdraw.draw.Labels", "attribute.fontSize.text");
         fireUndoableEditHappened(edit);
     }
 
