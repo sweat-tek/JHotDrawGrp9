@@ -266,28 +266,17 @@ public class PaletteFontChooserUI extends FontChooserUI {
         isUpdating--;
     }
 
-    private void doCollectionChanged() {
-        JList list = selectionPanel.getCollectionList();
-        TreePath path = fontChooser.getSelectionPath();
-        FontCollectionNode oldCollection = (path != null && path.getPathCount() > 1) ? (FontCollectionNode) path.getPathComponent(1) : null;
-        FontFamilyNode oldFamily = (path != null && path.getPathCount() > 2) ? (FontFamilyNode) path.getPathComponent(2) : null;
-        FontFaceNode oldFace = (path != null && path.getPathCount() > 3) ? (FontFaceNode) path.getPathComponent(3) : null;
-        FontCollectionNode newCollection = (FontCollectionNode) list.getSelectedValue();
-        FontFamilyNode newFamily = null;
-        FontFaceNode newFace = null;
-        if ((oldFamily == null || oldFace == null) && fontChooser.getSelectedFont() != null) {
-            oldFace = new FontFaceNode(fontChooser.getSelectedFont());
-            oldFamily = new FontFamilyNode(fontChooser.getSelectedFont().getFamily());
-        }
-        if (newCollection != null && oldFamily != null) {
-            for (int i = 0, n = newCollection.getChildCount(); i < n; i++) {
-                FontFamilyNode aFamily = newCollection.getChildAt(i);
-                if (aFamily.compareTo(oldFamily) == 0) {
-                    newFamily = aFamily;
-                    break;
-                }
-            }
-        }
+
+    JList list;
+    TreePath path;
+    FontCollectionNode oldCollection;
+    FontFamilyNode oldFamily;
+    FontFaceNode oldFace;
+    FontCollectionNode newCollection;
+    FontFamilyNode newFamily;
+    FontFaceNode newFace;
+
+    public void searchNewFamilyForFontFace(){
         if (newFamily != null && oldFace != null) {
             // search in the new family for the face
             for (FontFaceNode aFace : newFamily.faces()) {
@@ -308,6 +297,35 @@ public class PaletteFontChooserUI extends FontChooserUI {
                 }
             }
         }
+    }
+
+    public void compareOldAndNewFamily(){
+        if (newCollection != null && oldFamily != null) {
+            for (int i = 0, n = newCollection.getChildCount(); i < n; i++) {
+                FontFamilyNode aFamily = newCollection.getChildAt(i);
+                if (aFamily.compareTo(oldFamily) == 0) {
+                    newFamily = aFamily;
+                    break;
+                }
+            }
+        }
+    }
+
+    private void doCollectionChanged() {
+        list = selectionPanel.getCollectionList();
+        path = fontChooser.getSelectionPath();
+        oldCollection = (path != null && path.getPathCount() > 1) ? (FontCollectionNode) path.getPathComponent(1) : null;
+        oldFamily = (path != null && path.getPathCount() > 2) ? (FontFamilyNode) path.getPathComponent(2) : null;
+        oldFace = (path != null && path.getPathCount() > 3) ? (FontFaceNode) path.getPathComponent(3) : null;
+        newCollection = (FontCollectionNode) list.getSelectedValue();
+        newFamily = null;
+        newFace = null;
+        if ((oldFamily == null || oldFace == null) && fontChooser.getSelectedFont() != null) {
+            oldFace = new FontFaceNode(fontChooser.getSelectedFont());
+            oldFamily = new FontFamilyNode(fontChooser.getSelectedFont().getFamily());
+        }
+        compareOldAndNewFamily();
+        searchNewFamilyForFontFace();
         if (newCollection != null) {
             if (newFamily == null && newCollection.getChildCount() > 0) {
                 newFamily = newCollection.getChildAt(0);
