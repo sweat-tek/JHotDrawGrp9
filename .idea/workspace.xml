@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27b2dbe9-3351-4651-bf15-2495da1f6cdc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/JFontChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/JFontChooser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/action/FontChooserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/action/FontChooserHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jhotdraw-core/src/main/java/org/jhotdraw/draw/handle/FontSizeHandle.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-core/src/main/java/org/jhotdraw/draw/handle/FontSizeHandle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,19 +38,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danny/Desktop/cancer/code/final maybe/SB5-MAI-E18-5/JHotDraw&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/danny/githubprojects/JHotDrawGrp9",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\danny\githubprojects\JHotDrawGrp9\jhotdraw-gui\src\main\resources" />
@@ -113,7 +112,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bb0ef58c-1994-4d86-b65c-a3a386687e3b" name="Changes" comment="" />
+      <changelist id="27b2dbe9-3351-4651-bf15-2495da1f6cdc" name="Changes" comment="" />
       <created>1665487376662</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -127,6 +126,7 @@
       <workItem from="1668515294444" duration="6703000" />
       <workItem from="1669056400319" duration="5006000" />
       <workItem from="1669115914640" duration="12347000" />
+      <workItem from="1672230370537" duration="897000" />
     </task>
     <servers />
   </component>
@@ -143,30 +143,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/plaf/palette/PaletteFontChooserUI.java</url>
-          <line>268</line>
-          <properties class="org.jhotdraw.gui.plaf.palette.PaletteFontChooserUI" method="doCollectionChanged">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/JFontChooser.java</url>
-          <line>408</line>
-          <properties class="org.jhotdraw.gui.JFontChooser" method="updateSelectionPath">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
