@@ -7,6 +7,7 @@
  */
 package org.jhotdraw.samples.svg.figures;
 
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.AbstractAttributedFigure;
 import java.awt.*;
 import java.awt.event.*;
@@ -22,7 +23,7 @@ import org.jhotdraw.samples.svg.Gradient;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
 import org.jhotdraw.util.*;
 
-/**
+/*"Main.ftf" "SVGApplicationModel.ftf" "SVGBezierFigure.ftf" "SVGEllipseFigure.ftf" "SVGImageFigure.ftf" "SVGTextAreaFigure.ftf"*
  * SVGAttributedFigure.
  *
  * @author Werner Randelshofer
@@ -35,6 +36,7 @@ public abstract class SVGAttributedFigure extends AbstractAttributedFigure {
     /**
      * Creates a new instance.
      */
+    @FeatureEntryPoint(value = "AttributedFigure")
     public SVGAttributedFigure() {
     }
 
@@ -135,7 +137,7 @@ public abstract class SVGAttributedFigure extends AbstractAttributedFigure {
                 (Point2D.Double) tx.transform(lead, lead));
     }
 
-    public void transformAcessories(AffineTransform tx){
+    public void transformAccessories(AffineTransform tx){
         if (FILL_GRADIENT.get(this) != null &&
                 !FILL_GRADIENT.get(this).isRelativeToFigureBounds()) {
             Gradient g = FILL_GRADIENT.getClone(this);

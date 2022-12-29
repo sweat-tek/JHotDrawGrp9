@@ -7,6 +7,7 @@
  */
 package org.jhotdraw.samples.svg.figures;
 
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.ImageHolderFigure;
 import java.awt.*;
 import java.awt.event.*;
@@ -16,7 +17,7 @@ import java.io.*;
 import java.util.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import org.jhotdraw.draw.*;
+
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.draw.event.TransformRestoreEdit;
 import org.jhotdraw.draw.handle.BoundsOutlineHandle;
@@ -67,6 +68,7 @@ public class SVGImageFigure extends SVGAttributedFigure implements SVGFigure, Im
         this(0, 0, 0, 0);
     }
 
+    @FeatureEntryPoint(value = "SVGImageFigure")
     public SVGImageFigure(double x, double y, double width, double height) {
         rectangle = new Rectangle2D.Double(x, y, width, height);
         SVGAttributeKeys.setDefaults(this);
@@ -196,7 +198,7 @@ public class SVGImageFigure extends SVGAttributedFigure implements SVGFigure, Im
     @Override
     public void transform(AffineTransform tx) {
         super.transform2DPoint(tx);
-        super.transformAcessories(tx);
+        super.transformAccessories(tx);
     }
 
     // ATTRIBUTES

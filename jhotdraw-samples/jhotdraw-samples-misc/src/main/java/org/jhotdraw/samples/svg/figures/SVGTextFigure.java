@@ -231,7 +231,7 @@ public class SVGTextFigure
     @Override
     public void transform(AffineTransform tx) {
         super.transform2DPoint(tx);
-        super.transformAcessories(tx);
+        super.transformAccessories(tx);
     }
 
     @Override

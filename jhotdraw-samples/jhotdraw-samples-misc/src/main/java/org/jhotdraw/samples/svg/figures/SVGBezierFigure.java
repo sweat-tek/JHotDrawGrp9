@@ -7,6 +7,7 @@
  */
 package org.jhotdraw.samples.svg.figures;
 
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.BezierFigure;
 import java.awt.BasicStroke;
 import java.awt.event.*;
@@ -45,6 +46,7 @@ public class SVGBezierFigure extends BezierFigure {
         this(false);
     }
 
+    @FeatureEntryPoint(value = "SVGBezierFigure")
     public SVGBezierFigure(boolean isClosed) {
         super(isClosed);
         set(UNCLOSED_PATH_FILLED, true);
