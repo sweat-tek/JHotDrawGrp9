@@ -127,6 +127,7 @@
       <workItem from="1669056400319" duration="5006000" />
       <workItem from="1669115914640" duration="12347000" />
       <workItem from="1672230370537" duration="897000" />
+      <workItem from="1672311319975" duration="524000" />
     </task>
     <servers />
   </component>
@@ -143,26 +144,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/plaf/palette/PaletteFontChooserUI.java</url>
-          <line>313</line>
-          <properties class="org.jhotdraw.gui.plaf.palette.PaletteFontChooserUI" method="doCollectionChanged">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/plaf/palette/PaletteFontChooserUI.java</url>
-          <line>338</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
