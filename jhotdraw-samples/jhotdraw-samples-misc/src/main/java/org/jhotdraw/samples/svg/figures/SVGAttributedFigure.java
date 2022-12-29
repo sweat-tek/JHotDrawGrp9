@@ -7,7 +7,6 @@
  */
 package org.jhotdraw.samples.svg.figures;
 
-import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.AbstractAttributedFigure;
 import java.awt.*;
 import java.awt.event.*;
@@ -36,7 +35,6 @@ public abstract class SVGAttributedFigure extends AbstractAttributedFigure {
     /**
      * Creates a new instance.
      */
-    @FeatureEntryPoint(value = "AttributedFigure")
     public SVGAttributedFigure() {
     }
 
