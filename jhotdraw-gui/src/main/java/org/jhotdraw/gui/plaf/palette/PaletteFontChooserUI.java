@@ -269,7 +269,8 @@ public class PaletteFontChooserUI extends FontChooserUI {
 
 
     private void doCollectionChanged() {
-        FontNodeFinder fnf = new FontNodeFinder();
+        JList list = selectionPanel.getCollectionList();
+        FontNodeFinder fnf = new FontNodeFinder(list, (FontCollectionNode) list.getSelectedValue(), null, null);
         fnf.initializeOldFaceAndOldFamily();
         fnf.compareOldAndNewFamily();
         fnf.searchNewFamilyForFontFace();
@@ -485,15 +486,21 @@ public class PaletteFontChooserUI extends FontChooserUI {
     }
 
     private class FontNodeFinder{
-        JList list = selectionPanel.getCollectionList();
+        JList list;
         TreePath path = fontChooser.getSelectionPath();
         FontCollectionNode oldCollection = (path != null && path.getPathCount() > 1) ? (FontCollectionNode) path.getPathComponent(1) : null;
         FontFamilyNode oldFamily = (path != null && path.getPathCount() > 2) ? (FontFamilyNode) path.getPathComponent(2) : null;
         FontFaceNode oldFace = (path != null && path.getPathCount() > 3) ? (FontFaceNode) path.getPathComponent(3) : null;
-        FontCollectionNode newCollection = (FontCollectionNode) list.getSelectedValue();
-        FontFamilyNode newFamily = null;
-        FontFaceNode newFace = null;
+        FontCollectionNode newCollection;
+        FontFamilyNode newFamily;
+        FontFaceNode newFace;
 
+        FontNodeFinder(JList list, FontCollectionNode newCollection, FontFamilyNode newFamily, FontFaceNode newFace){
+            this.list = list;
+            this.newCollection = newCollection;
+            this.newFamily = newFamily;
+            this.newFace = newFace;
+        }
 
         private void initializeOldFaceAndOldFamily(){
             if ((oldFamily == null || oldFace == null) && fontChooser.getSelectedFont() != null) {
