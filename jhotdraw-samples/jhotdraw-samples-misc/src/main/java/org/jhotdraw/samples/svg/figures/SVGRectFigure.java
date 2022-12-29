@@ -10,6 +10,8 @@ package org.jhotdraw.samples.svg.figures;
 import java.awt.*;
 import java.awt.geom.*;
 import java.util.*;
+
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.FILL_COLOR;
 import static org.jhotdraw.draw.AttributeKeys.STROKE_CAP;
@@ -72,14 +74,17 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
     /**
      * Creates a new instance.
      */
+    @FeatureEntryPoint(value="SVGRectFigure")
     public SVGRectFigure() {
         this(0, 0, 0, 0);
     }
 
+    @FeatureEntryPoint(value="SVGRectFigure")
     public SVGRectFigure(double x, double y, double width, double height) {
         this(x, y, width, height, 0, 0);
     }
 
+    @FeatureEntryPoint(value="SVGRectFigure")
     public SVGRectFigure(double x, double y, double width, double height, double rx, double ry) {
         roundrect = new RoundRectangle2D.Double(x, y, width, height, rx, ry);
         SVGAttributeKeys.setDefaults(this);
@@ -88,6 +93,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
 
     // DRAWING
     @Override
+    @FeatureEntryPoint(value="drawFill")
     protected void drawFill(Graphics2D g) {
         if (getArcHeight() == 0d && getArcWidth() == 0d) {
             g.fill(roundrect.getBounds2D());
@@ -97,6 +103,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
     }
 
     @Override
+    @FeatureEntryPoint(value="drawStroke")
     protected void drawStroke(Graphics2D g) {
         if (roundrect.archeight == 0 && roundrect.arcwidth == 0) {
             g.draw(roundrect.getBounds2D());
@@ -104,28 +111,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
             // We have to generate the path for the round rectangle manually,
             // because the path of a Java RoundRectangle is drawn counter clockwise
             // whereas an SVG rect needs to be drawn clockwise.
-            Path2D.Double p = new Path2D.Double();
-            double aw = roundrect.arcwidth / 2d;
-            double ah = roundrect.archeight / 2d;
-            p.moveTo((roundrect.x + aw), (float) roundrect.y);
-            p.lineTo((roundrect.x + roundrect.width - aw), (float) roundrect.y);
-            p.curveTo((roundrect.x + roundrect.width - aw * ACV), (float) roundrect.y,
-                    (roundrect.x + roundrect.width), (float) (roundrect.y + ah * ACV),
-                    (roundrect.x + roundrect.width), (roundrect.y + ah));
-            p.lineTo((roundrect.x + roundrect.width), (roundrect.y + roundrect.height - ah));
-            p.curveTo(
-                    (roundrect.x + roundrect.width), (roundrect.y + roundrect.height - ah * ACV),
-                    (roundrect.x + roundrect.width - aw * ACV), (roundrect.y + roundrect.height),
-                    (roundrect.x + roundrect.width - aw), (roundrect.y + roundrect.height));
-            p.lineTo((roundrect.x + aw), (roundrect.y + roundrect.height));
-            p.curveTo((roundrect.x + aw * ACV), (roundrect.y + roundrect.height),
-                    (roundrect.x), (roundrect.y + roundrect.height - ah * ACV),
-                    (float) roundrect.x, (roundrect.y + roundrect.height - ah));
-            p.lineTo((float) roundrect.x, (roundrect.y + ah));
-            p.curveTo((roundrect.x), (roundrect.y + ah * ACV),
-                    (roundrect.x + aw * ACV), (float) (roundrect.y),
-                    (float) (roundrect.x + aw), (float) (roundrect.y));
-            p.closePath();
+            Path2D.Double p = new generateRoundedRecPath(roundrect, ACV);
             g.draw(p);
         }
     }
@@ -193,6 +179,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
     }
 
     @Override
+    @FeatureEntryPoint(value="getDrawingArea")
     public Rectangle2D.Double getDrawingArea() {
         Rectangle2D rx = getTransformedShape().getBounds2D();
         Rectangle2D.Double r = (rx instanceof Rectangle2D.Double) ? (Rectangle2D.Double) rx : new Rectangle2D.Double(rx.getX(), rx.getY(), rx.getWidth(), rx.getHeight());
@@ -223,6 +210,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
     }
 
     @Override
+    @FeatureEntryPoint(value="setBounds")
     public void setBounds(Point2D.Double anchor, Point2D.Double lead) {
         invalidateTransformedShape();
         roundrect.x = Math.min(anchor.x, lead.x);
@@ -237,6 +225,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
         cachedHitShape = null;
     }
 
+    @FeatureEntryPoint(value="getTransformedShape")
     private Shape getTransformedShape() {
         if (cachedTransformedShape == null) {
             if (getArcHeight() == 0 || getArcWidth() == 0) {
@@ -251,6 +240,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
         return cachedTransformedShape;
     }
 
+    @FeatureEntryPoint(value="getHitShape")
     private Shape getHitShape() {
         if (cachedHitShape == null) {
             if (get(FILL_COLOR) != null || get(FILL_GRADIENT) != null) {
@@ -270,6 +260,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
      * @param tx The transformation.
      */
     @Override
+    @FeatureEntryPoint(value="transform")
     public void transform(AffineTransform tx) {
         invalidateTransformedShape();
         if (get(TRANSFORM) != null
@@ -324,6 +315,7 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
 
     // EDITING
     @Override
+    @FeatureEntryPoint(value="createHandles")
     public Collection<Handle> createHandles(int detailLevel) {
         LinkedList<Handle> handles = new LinkedList<Handle>();
         switch (detailLevel % 2) {
@@ -365,4 +357,35 @@ public class SVGRectFigure extends SVGAttributedFigure implements SVGFigure {
         super.invalidate();
         invalidateTransformedShape();
     }
+
+    private Path2D.Double generateRoundedRecPath(RoundRectangle2D.Double rect, double acv) {
+        //Path for rounded rectangle
+        Path2D.Double p = new Path2D.Double();
+
+        double aw = roundrect.arcwidth / 2d;
+        double ah = roundrect.archeight / 2d;
+        p.moveTo((roundrect.x + aw), (float) roundrect.y);
+        p.lineTo((roundrect.x + roundrect.width - aw), (float) roundrect.y);
+        p.curveTo((roundrect.x + roundrect.width - aw * ACV), (float) roundrect.y,
+                (roundrect.x + roundrect.width), (float) (roundrect.y + ah * ACV),
+                (roundrect.x + roundrect.width), (roundrect.y + ah));
+        p.lineTo((roundrect.x + roundrect.width), (roundrect.y + roundrect.height - ah));
+        p.curveTo(
+                (roundrect.x + roundrect.width), (roundrect.y + roundrect.height - ah * ACV),
+                (roundrect.x + roundrect.width - aw * ACV), (roundrect.y + roundrect.height),
+                (roundrect.x + roundrect.width - aw), (roundrect.y + roundrect.height));
+        p.lineTo((roundrect.x + aw), (roundrect.y + roundrect.height));
+        p.curveTo((roundrect.x + aw * ACV), (roundrect.y + roundrect.height),
+                (roundrect.x), (roundrect.y + roundrect.height - ah * ACV),
+                (float) roundrect.x, (roundrect.y + roundrect.height - ah));
+        p.lineTo((float) roundrect.x, (roundrect.y + ah));
+        p.curveTo((roundrect.x), (roundrect.y + ah * ACV),
+                (roundrect.x + aw * ACV), (float) (roundrect.y),
+                (float) (roundrect.x + aw), (float) (roundrect.y));
+        p.closePath();
+        g.draw(p);
+    }
+
 }
+
+

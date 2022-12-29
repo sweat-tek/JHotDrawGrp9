@@ -19,7 +19,7 @@
 package org.jhotdraw.draw;
 
 import org.jhotdraw.draw.figure.Figure;
-import static com.sun.java.accessibility.util.AWTEventMonitor.addFocusListener;
+//import static com.sun.java.accessibility.util.AWTEventMonitor.addFocusListener;//
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -58,6 +58,8 @@ import javax.swing.undo.AbstractUndoableEdit;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 import org.jhotdraw.api.gui.EditableComponent;
+
+import static com.sun.java.accessibility.util.AWTEventMonitor.addFocusListener;
 import static org.jhotdraw.draw.AttributeKeys.CANVAS_FILL_COLOR;
 import static org.jhotdraw.draw.AttributeKeys.CANVAS_FILL_OPACITY;
 import static org.jhotdraw.draw.AttributeKeys.CANVAS_HEIGHT;
