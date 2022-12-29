@@ -281,32 +281,10 @@ public class PaletteFontChooserUI extends FontChooserUI {
     private void doFamilyChanged() {
         JList list = selectionPanel.getFamilyList();
         TreePath path = fontChooser.getSelectionPath();
-        FontCollectionNode oldCollection = (path != null && path.getPathCount() > 1) ? (FontCollectionNode) path.getPathComponent(1) : null;
-        FontFamilyNode oldFamily = (path != null && path.getPathCount() > 2) ? (FontFamilyNode) path.getPathComponent(2) : null;
-        FontFaceNode oldFace = (path != null && path.getPathCount() > 3) ? (FontFaceNode) path.getPathComponent(3) : null;
-        FontCollectionNode newCollection = oldCollection;
-        FontFamilyNode newFamily = (FontFamilyNode) list.getSelectedValue();
-        FontFaceNode newFace = null;
-        if (newFamily != null && oldFace != null) {
-            for (int i = 0, n = newFamily.getChildCount(); i < n; i++) {
-                FontFaceNode aFace = newFamily.getChildAt(i);
-                if (aFace.compareTo(oldFace) == 0) {
-                    newFace = aFace;
-                    break;
-                }
-            }
-        }
-        if (newCollection != null) {
-            if (newFamily == null && newCollection.getChildCount() > 0) {
-                newFamily = newCollection.getChildAt(0);
-            }
-            if (newFamily != null) {
-                if (newFace == null && newFamily.getChildCount() > 0) {
-                    newFace = newFamily.getChildAt(0);
-                }
-            }
-        }
-        setNewSelectionPath(newCollection, newFamily, newFace);
+        FontCollectionNode newCollection = (path != null && path.getPathCount() > 1) ? (FontCollectionNode) path.getPathComponent(1) : null;
+        FontNodeFinder fnf = new FontNodeFinder(list, newCollection, (FontFamilyNode)list.getSelectedValue(),null);
+        fnf.setNewFaceAndNewFamily();
+        setNewSelectionPath(fnf.newCollection, fnf.newFamily, fnf.newFace);
     }
 
     private void doFaceChanged() {
@@ -531,6 +509,7 @@ public class PaletteFontChooserUI extends FontChooserUI {
                 }
             }
         }
+
         public void compareOldAndNewFamily(){
             if (newCollection != null && oldFamily != null) {
                 for (int i = 0, n = newCollection.getChildCount(); i < n; i++) {
@@ -544,6 +523,28 @@ public class PaletteFontChooserUI extends FontChooserUI {
         }
 
         public void checkCollectionAndFamily(){
+            if (newCollection != null) {
+                if (newFamily == null && newCollection.getChildCount() > 0) {
+                    newFamily = newCollection.getChildAt(0);
+                }
+                if (newFamily != null) {
+                    if (newFace == null && newFamily.getChildCount() > 0) {
+                        newFace = newFamily.getChildAt(0);
+                    }
+                }
+            }
+        }
+
+        public void setNewFaceAndNewFamily(){
+            if (newFamily != null && oldFace != null) {
+                for (int i = 0, n = newFamily.getChildCount(); i < n; i++) {
+                    FontFaceNode aFace = newFamily.getChildAt(i);
+                    if (aFace.compareTo(oldFace) == 0) {
+                        newFace = aFace;
+                        break;
+                    }
+                }
+            }
             if (newCollection != null) {
                 if (newFamily == null && newCollection.getChildCount() > 0) {
                     newFamily = newCollection.getChildAt(0);
