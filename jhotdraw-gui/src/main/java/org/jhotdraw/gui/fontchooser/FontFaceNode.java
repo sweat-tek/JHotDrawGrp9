@@ -27,13 +27,19 @@ public class FontFaceNode implements MutableTreeNode, Comparable<FontFaceNode>, 
     private String name;
     Map<String, String> fontsDictionary = FontsDictionary.getInstance().fonts;
 
+    public FontFaceNode(){
+
+    }
+
     public FontFaceNode(Font typeface) {
         this.typeface = typeface;
         this.name = beautifyName(typeface.getPSName());
     }
 
+
     public String addSpacesToString(String name){
         StringBuilder buf = new StringBuilder();
+
         char prev = name.charAt(0);
         buf.append(prev);
         for (int i = 1; i < name.length(); i++) {
@@ -50,7 +56,7 @@ public class FontFaceNode implements MutableTreeNode, Comparable<FontFaceNode>, 
         return name;
     }
 
-    protected String beautifyName(String name) {
+    public String beautifyName(String name) {
         // 'Beautify' the name
         int p = name.lastIndexOf('-');
         name = name.substring(p + 1);
