@@ -27,7 +27,7 @@ public class FontsListDictionary {
     ArrayList<String> decorativeList = new ArrayList<>(Arrays.asList(decorative.split(",")));
     ArrayList<String> symbolsList = new ArrayList<>(Arrays.asList(symbols.split(",")));
 
-    Map<String, ArrayList<String>> fontsList;
+    public Map<String, ArrayList<String>> fontsList;
 
     public static FontsListDictionary instance = null;
 

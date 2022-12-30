@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27b2dbe9-3351-4651-bf15-2495da1f6cdc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/test/FontFaceNodeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/test/DefaultFontChooserModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-gui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontFaceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontFaceNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/DefaultFontChooserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/DefaultFontChooserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontsListDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontsListDictionary.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,7 @@
       <recent name="C:\Users\danny\githubprojects\JHotDrawGrp9\jhotdraw-gui\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.DefaultFontChooserModelTest.collectFamiliesNamed">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.jhotdraw.samples.svg.Main" />
       <module name="jhotdraw-samples-misc" />
@@ -72,20 +72,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FontFaceNodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DefaultFontChooserModelTest.collectFamiliesNamed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jhotdraw-gui" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FontFaceNodeTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="DefaultFontChooserModelTest" />
+      <option name="METHOD_NAME" value="collectFamiliesNamed" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FontFaceNodeTest.addSpacesToStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DefaultFontChooserModelTest.collectFontFamiliesSortedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jhotdraw-gui" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FontFaceNodeTest" />
-      <option name="METHOD_NAME" value="addSpacesToStringTest" />
+      <option name="MAIN_CLASS_NAME" value="DefaultFontChooserModelTest" />
+      <option name="METHOD_NAME" value="collectFontFamiliesSortedTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DefaultFontChooserModelTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jhotdraw-gui" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DefaultFontChooserModelTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,36 +112,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.testMain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="jhotdraw-samples-misc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.jhotdraw.samples.svg.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.jhotdraw.samples.svg" />
-      <option name="MAIN_CLASS_NAME" value="org.jhotdraw.samples.svg.MainTest" />
-      <option name="METHOD_NAME" value="testMain" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.FontFaceNodeTest.addSpacesToStringTest" />
+      <item itemvalue="JUnit.DefaultFontChooserModelTest.collectFamiliesNamed" />
+      <item itemvalue="JUnit.DefaultFontChooserModelTest.collectFontFamiliesSortedTest" />
+      <item itemvalue="JUnit.DefaultFontChooserModelTest.test" />
       <item itemvalue="JUnit.FontFaceNodeTest.beautifyNameTest" />
-      <item itemvalue="JUnit.FontFaceNodeTest" />
-      <item itemvalue="JUnit.MainTest.testMain" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DefaultFontChooserModelTest.collectFamiliesNamed" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.DefaultFontChooserModelTest.collectFontFamiliesSortedTest" />
+        <item itemvalue="JUnit.DefaultFontChooserModelTest.test" />
         <item itemvalue="JUnit.FontFaceNodeTest.beautifyNameTest" />
-        <item itemvalue="JUnit.FontFaceNodeTest.addSpacesToStringTest" />
-        <item itemvalue="JUnit.FontFaceNodeTest" />
-        <item itemvalue="JUnit.MainTest.testMain" />
       </list>
     </recent_temporary>
   </component>
@@ -155,7 +150,7 @@
       <workItem from="1672311319975" duration="2720000" />
       <workItem from="1672328295838" duration="148000" />
       <workItem from="1672328458604" duration="4538000" />
-      <workItem from="1672393547160" duration="5393000" />
+      <workItem from="1672393547160" duration="12960000" />
     </task>
     <servers />
   </component>
@@ -177,14 +172,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontFaceNode.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/DefaultFontChooserModel.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/DefaultFontChooserModel.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="23" />
+          <line>153</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

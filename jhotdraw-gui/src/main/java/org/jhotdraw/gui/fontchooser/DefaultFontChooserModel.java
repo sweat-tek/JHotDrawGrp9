@@ -55,6 +55,7 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
         root = new DefaultMutableTreeNode();
         setFonts(fonts);
     }
+
     public ArrayList<FontFamilyNode> collectFontFamiliesSorted(Font[] fonts){
         ArrayList<FontFamilyNode> families = new ArrayList<>();
         HashMap<String, FontFamilyNode> familyMap = new HashMap<>();
@@ -140,7 +141,7 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
         fireTreeStructureChanged(this, new TreePath(root));
     }
 
-    protected ArrayList<FontFamilyNode> collectFamiliesNamed(ArrayList<FontFamilyNode> families, ArrayList<String> fontsList) {
+    public ArrayList<FontFamilyNode> collectFamiliesNamed(ArrayList<FontFamilyNode> families, ArrayList<String> fontsList) {
         ArrayList<FontFamilyNode> coll = new ArrayList<>();
         HashSet<String> nameMap = new HashSet<>();
         nameMap.addAll(fontsList);
