@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27b2dbe9-3351-4651-bf15-2495da1f6cdc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/test/DefaultFontChooserModelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/test/FontToolBarTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/DefaultFontChooserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/DefaultFontChooserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontsListDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/java/org/jhotdraw/gui/fontchooser/FontsListDictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jhotdraw-gui/src/main/test/DefaultFontChooserModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-gui/src/main/test/DefaultFontChooserModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/gui/FontToolBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/gui/FontToolBar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,25 +40,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danny/Desktop/cancer/code/final maybe/SB5-MAI-E18-5/JHotDraw&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/danny/Desktop/cancer/code/final maybe/SB5-MAI-E18-5/JHotDraw",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\danny\githubprojects\JHotDrawGrp9\jhotdraw-gui\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DefaultFontChooserModelTest.collectFamiliesNamed">
+  <component name="RunManager" selected="JUnit.FontToolBarTest.createDisclosedComponentTest2">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.jhotdraw.samples.svg.Main" />
       <module name="jhotdraw-samples-misc" />
@@ -92,21 +92,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DefaultFontChooserModelTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="jhotdraw-gui" />
+    <configuration name="FontToolBarTest.createDisclosedComponentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jhotdraw-samples-misc" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DefaultFontChooserModelTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="FontToolBarTest" />
+      <option name="METHOD_NAME" value="createDisclosedComponentTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FontFaceNodeTest.beautifyNameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="jhotdraw-gui" />
+    <configuration name="FontToolBarTest.createDisclosedComponentTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jhotdraw-samples-misc" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FontFaceNodeTest" />
-      <option name="METHOD_NAME" value="beautifyNameTest" />
+      <option name="MAIN_CLASS_NAME" value="FontToolBarTest" />
+      <option name="METHOD_NAME" value="createDisclosedComponentTest2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,16 +116,16 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.DefaultFontChooserModelTest.collectFamiliesNamed" />
       <item itemvalue="JUnit.DefaultFontChooserModelTest.collectFontFamiliesSortedTest" />
-      <item itemvalue="JUnit.DefaultFontChooserModelTest.test" />
-      <item itemvalue="JUnit.FontFaceNodeTest.beautifyNameTest" />
+      <item itemvalue="JUnit.FontToolBarTest.createDisclosedComponentTest" />
+      <item itemvalue="JUnit.FontToolBarTest.createDisclosedComponentTest2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FontToolBarTest.createDisclosedComponentTest2" />
+        <item itemvalue="JUnit.FontToolBarTest.createDisclosedComponentTest" />
         <item itemvalue="JUnit.DefaultFontChooserModelTest.collectFamiliesNamed" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DefaultFontChooserModelTest.collectFontFamiliesSortedTest" />
-        <item itemvalue="JUnit.DefaultFontChooserModelTest.test" />
-        <item itemvalue="JUnit.FontFaceNodeTest.beautifyNameTest" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +150,7 @@
       <workItem from="1672311319975" duration="2720000" />
       <workItem from="1672328295838" duration="148000" />
       <workItem from="1672328458604" duration="4538000" />
-      <workItem from="1672393547160" duration="12960000" />
+      <workItem from="1672393547160" duration="15775000" />
     </task>
     <servers />
   </component>

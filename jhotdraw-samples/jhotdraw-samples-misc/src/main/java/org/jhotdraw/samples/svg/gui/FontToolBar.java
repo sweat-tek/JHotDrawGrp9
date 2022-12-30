@@ -206,7 +206,7 @@ public class FontToolBar extends AbstractToolBar {
         p.add(btn, gbc);
     }
     @Override
-    protected JComponent createDisclosedComponent(int state) {
+    public JComponent createDisclosedComponent(int state) {
         JPanel p = null;
         p = new JPanel();
         p.setOpaque(false);
