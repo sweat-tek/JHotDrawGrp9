@@ -61,12 +61,13 @@ public class FontChooserHandler extends AbstractSelectedAction
         popupMenu.setVisible(false);
     }
 
-    protected void applySelectedFontToFigures() {
+    public void applySelectedFontToFigures() {
         final ArrayList<Figure> selectedFigures = new ArrayList<>(getView().getSelectedFigures());
         final ArrayList<Object> restoreData = new ArrayList<>(selectedFigures.size());
         for (Figure figure : selectedFigures) {
             restoreData.add(figure.getAttributesRestoreData());
             figure.willChange();
+            //figure.get(key,);
             figure.set(key, fontChooser.getSelectedFont());
             figure.changed();
         }
