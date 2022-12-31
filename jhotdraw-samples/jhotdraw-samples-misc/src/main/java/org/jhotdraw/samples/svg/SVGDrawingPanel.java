@@ -7,8 +7,7 @@
  */
 package org.jhotdraw.samples.svg;
 
-import java.awt.Color;
-import java.awt.Component;
+import java.awt.*;
 import java.awt.event.ContainerEvent;
 import java.awt.event.ContainerListener;
 import java.awt.event.ItemEvent;
@@ -31,6 +30,7 @@ import javax.swing.JPanel;
 import javax.swing.JToolBar;
 import javax.swing.SwingUtilities;
 import javax.swing.TransferHandler;
+
 import org.jhotdraw.api.app.Disposable;
 import org.jhotdraw.draw.DefaultDrawingEditor;
 import org.jhotdraw.draw.Drawing;
@@ -124,7 +124,7 @@ public class SVGDrawingPanel extends JPanel implements Disposable {
         // Try to install the DnDDrawingViewTransferHandler
         // Since this class only works on J2SE 6, we have to use reflection.
         try {
-            view.setTransferHandler((TransferHandler) Class.forName("org.jhotdraw.draw.DnDDrawingViewTransferHandler").newInstance());
+            view.setTransferHandler((TransferHandler) Class.forName("org.jhotdraw.draw.DnDDrawingViewTransferHandler").getEnclosingConstructor().newInstance());
         } catch (Exception e) {
             // bail silently
         }
@@ -531,7 +531,7 @@ public class SVGDrawingPanel extends JPanel implements Disposable {
         toolsScrollPane.setViewportView(toolsPane);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weightx = 0.5;
         gridBagConstraints.weighty = 1.0;
         toolsPanel.add(toolsScrollPane, gridBagConstraints);
         add(toolsPanel, java.awt.BorderLayout.SOUTH);

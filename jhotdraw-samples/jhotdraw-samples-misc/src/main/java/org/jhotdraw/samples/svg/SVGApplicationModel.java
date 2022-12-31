@@ -12,6 +12,8 @@ import java.beans.PropertyChangeListener;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
+
+//import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.action.edit.ClearSelectionAction;
 import org.jhotdraw.action.edit.RedoAction;
 import org.jhotdraw.action.edit.UndoAction;
@@ -65,6 +67,7 @@ public class SVGApplicationModel extends DefaultApplicationModel {
     /**
      * Creates a new instance.
      */
+    //@FeatureEntryPoint(value = "SVGApplicationModel")
     public SVGApplicationModel() {
         gridConstrainer = new GridConstrainer(12, 12);
     }
@@ -76,6 +79,7 @@ public class SVGApplicationModel extends DefaultApplicationModel {
         return sharedEditor;
     }
 
+    //@FeatureEntryPoint(value = "initView")
     @Override
     public void initView(Application a, View view) {
         SVGView v = (SVGView) view;
@@ -97,6 +101,7 @@ public class SVGApplicationModel extends DefaultApplicationModel {
         //view.addDisposable(action);
     }
 
+    //@FeatureEntryPoint(value = "createActionMap")
     @Override
     public ActionMap createActionMap(Application a, View view) {
         SVGView v = (SVGView) view;
@@ -172,6 +177,7 @@ public class SVGApplicationModel extends DefaultApplicationModel {
         return list;
     }
 
+    ////@FeatureEntryPoint(value = "createOpenChooser")
     @Override
     public URIChooser createOpenChooser(Application a, View v) {
         final JFileURIChooser c = new JFileURIChooser();

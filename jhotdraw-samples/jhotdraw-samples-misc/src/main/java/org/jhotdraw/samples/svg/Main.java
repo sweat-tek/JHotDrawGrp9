@@ -7,6 +7,7 @@
  */
 package org.jhotdraw.samples.svg;
 
+//import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.app.OSXApplication;
 import org.jhotdraw.app.SDIApplication;
@@ -38,7 +39,7 @@ public class Main {
             //  app = new MDIApplication();
             app = new SDIApplication();
         } else {
-            app = new SDIApplication();
+            app =  new SDIApplication();
         }
         SVGApplicationModel model = new SVGApplicationModel();
         model.setName("JHotDraw SVG");

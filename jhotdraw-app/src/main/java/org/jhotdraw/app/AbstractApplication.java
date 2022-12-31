@@ -23,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.prefs.*;
 import javax.swing.*;
+
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.ApplicationModel;
 import org.jhotdraw.api.app.Disposable;
@@ -89,6 +90,7 @@ public abstract class AbstractApplication extends AbstractBean implements Applic
     /**
      * Creates a new instance.
      */
+    //@FeatureEntryPoint(value = "AbstractApplication")
     public AbstractApplication() {
     }
 
@@ -114,6 +116,7 @@ public abstract class AbstractApplication extends AbstractBean implements Applic
     /**
      * {@inheritDoc}
      */
+    //@FeatureEntryPoint(value = "Start")
     @Override
     public void start(List<URI> uris) {
         if (uris.isEmpty()) {
@@ -177,6 +180,7 @@ public abstract class AbstractApplication extends AbstractBean implements Applic
         return v;
     }
 
+    //@FeatureEntryPoint(value = "setModel")
     @Override
     public void setModel(ApplicationModel newValue) {
         ApplicationModel oldValue = model;
@@ -318,6 +322,8 @@ public abstract class AbstractApplication extends AbstractBean implements Applic
      * @param args This implementation supports the command-line parameter "-open"
      * which can be followed by one or more filenames or URI's.
      */
+
+    //@FeatureEntryPoint(value = "ApplicationLaunch")
     @Override
     public void launch(String[] args) {
         configure(args);
