@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d085ca8-8597-4e36-93b1-b49d1ca8b397" name="Changes" comment="Extracted method from children into parent">
-      <change afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/draw/DefaultPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/resources/META-INF/aop.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/test/java/org/jhotdraw/samples/svg/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractApplicationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractApplicationModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/SDIApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/SDIApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-core/src/main/java/org/jhotdraw/draw/DefaultDrawingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-core/src/main/java/org/jhotdraw/draw/DefaultDrawingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-core/src/main/java/org/jhotdraw/draw/GridConstrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-core/src/main/java/org/jhotdraw/draw/GridConstrainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/draw/DrawingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/draw/DrawingPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/SVGApplicationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/SVGApplicationModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/SVGView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/SVGView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/gui/CanvasToolBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/gui/CanvasToolBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6d085ca8-8597-4e36-93b1-b49d1ca8b397" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,10 +12,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.16.1/lib/src.zip!/java.desktop/javax/swing/JComponent.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://$USER_HOME$/.jdks/semeru-1.8.0_345/src.zip!/javax/swing/ActionMap.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -110,11 +86,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.MainTest.testMain" />
-      <item itemvalue="JUnit.MainTest" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -139,14 +110,6 @@
       <workItem from="1668438292284" duration="1421000" />
       <workItem from="1668515294444" duration="6703000" />
     </task>
-    <task id="LOCAL-00001" summary="Extracted method from children into parent">
-      <created>1671890460242</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1671890460242</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,10 +125,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Extracted method from children into parent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extracted method from children into parent" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
