@@ -15,8 +15,6 @@ import java.lang.reflect.*;
 import java.net.URI;
 import java.util.HashMap;
 import javax.swing.*;
-
-//import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.action.edit.RedoAction;
 import org.jhotdraw.action.edit.UndoAction;
 import org.jhotdraw.api.app.View;
@@ -56,8 +54,6 @@ public class SVGView extends AbstractView {
     /**
      * Creates a new View.
      */
-
-    //@FeatureEntryPoint(value = "SVGView")
     public SVGView() {
         initComponents();
         undo = svgPanel.getUndoRedoManager();

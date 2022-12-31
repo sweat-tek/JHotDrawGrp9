@@ -44,7 +44,7 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.1.1</version>
 				<configuration>
-					<!--<additionalparam>-Xdoclint:none</additionalparam>-->
+					<additionalparam>-Xdoclint:none</additionalparam>
 					<failOnWarnings>false</failOnWarnings>
 					<failOnError>false</failOnError>
 				</configuration>
@@ -66,7 +66,6 @@
 				<version>1.14.0</version>
 				<configuration>
 					<pushRemote>false</pushRemote>
-					<!--suppress UnresolvedMavenProperty -->
 					<mvnExecutable>${M2_HOME}/bin/mvn</mvnExecutable>
 					<skipTestProject>true</skipTestProject>
 					<fetchRemote>false</fetchRemote>
