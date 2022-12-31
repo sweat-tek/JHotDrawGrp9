@@ -296,7 +296,6 @@ public class DefaultDrawingView
     /**
      * Creates new instance.
      */
-    //@FeatureEntryPoint(value = "DefaultDrawingView")
     public DefaultDrawingView() {
         initComponents();
         eventHandler = createEventHandler();
@@ -305,7 +304,7 @@ public class DefaultDrawingView
         addFocusListener(eventHandler);
         setTransferHandler(new DefaultDrawingViewTransferHandler());
         setBackground(new Color(0xb0b0b0));
-        setOpaque(false);
+        setOpaque(true);
     }
 
     protected EventHandler createEventHandler() {
@@ -1129,10 +1128,8 @@ public class DefaultDrawingView
     /**
      * Side effect: Changes view Translation.
      */
-    //@FeatureEntryPoint(value = "DefaultDrawingView.setBounds")
     @Override
     public void setBounds(int x, int y, int width, int height) {
-        //TODO: Find ud af hvordan man kan sætte den her på en eller anden måde
         super.setBounds(x, y, width, height);
         validateViewTranslation();
     }

@@ -230,8 +230,33 @@ public class SVGTextFigure
      */
     @Override
     public void transform(AffineTransform tx) {
-        super.transform2DPoint(tx);
-        super.transformAccessories(tx);
+        if (get(TRANSFORM) != null
+                || tx.getType() != (tx.getType() & AffineTransform.TYPE_TRANSLATION)) {
+            if (get(TRANSFORM) == null) {
+                set(TRANSFORM, (AffineTransform) tx.clone());
+            } else {
+                AffineTransform t = TRANSFORM.getClone(this);
+                t.preConcatenate(tx);
+                set(TRANSFORM, t);
+            }
+        } else {
+            for (int i = 0; i < coordinates.length; i++) {
+                tx.transform(coordinates[i], coordinates[i]);
+            }
+            if (get(FILL_GRADIENT) != null
+                    && !get(FILL_GRADIENT).isRelativeToFigureBounds()) {
+                Gradient g = FILL_GRADIENT.getClone(this);
+                g.transform(tx);
+                set(FILL_GRADIENT, g);
+            }
+            if (get(STROKE_GRADIENT) != null
+                    && !get(STROKE_GRADIENT).isRelativeToFigureBounds()) {
+                Gradient g = STROKE_GRADIENT.getClone(this);
+                g.transform(tx);
+                set(STROKE_GRADIENT, g);
+            }
+        }
+        invalidate();
     }
 
     @Override

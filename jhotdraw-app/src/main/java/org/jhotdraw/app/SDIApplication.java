@@ -140,11 +140,9 @@ public class SDIApplication extends AbstractApplication {
     /**
      * Creates a new instance.
      */
-    //@FeatureEntryPoint(value = "SDIApplication")
     public SDIApplication() {
     }
 
-    //@FeatureEntryPoint(value = "SDIApplication.launch")
     @Override
     public void launch(String[] args) {
         System.setProperty("apple.awt.graphics.UseQuartz", "false");
@@ -510,7 +508,6 @@ public class SDIApplication extends AbstractApplication {
         return m;
     }
 
-    //@FeatureEntryPoint(value = "createModelActionMap")
     protected ActionMap createModelActionMap(ApplicationModel mo) {
         ActionMap rootMap = new ActionMap();
         rootMap.put(AboutAction.ID, new AboutAction(this));
@@ -520,7 +517,6 @@ public class SDIApplication extends AbstractApplication {
         return moMap;
     }
 
-    //@FeatureEntryPoint(value = "createViewActionMap")
     @Override
     protected ActionMap createViewActionMap(View v) {
         ActionMap intermediateMap = new ActionMap();

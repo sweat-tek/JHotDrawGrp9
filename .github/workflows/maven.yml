@@ -2,12 +2,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches:
-    - 'feature/**'
+    branches: [ "feature/**" ]
   pull_request:
-    branches:
-    - 'develop'
-    - 'master'
+    branches: [ "develop" ]
 env:
   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 jobs:
