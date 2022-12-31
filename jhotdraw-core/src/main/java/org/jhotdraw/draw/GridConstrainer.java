@@ -69,6 +69,7 @@ public class GridConstrainer extends AbstractConstrainer {
      * @param width The width of a grid cell.
      * @param height The height of a grid cell.
      */
+    //@FeatureEntryPoint(value = "GridContainer")
     public GridConstrainer(double width, double height) {
         this(width, height, Math.PI / 8d, true);
     }

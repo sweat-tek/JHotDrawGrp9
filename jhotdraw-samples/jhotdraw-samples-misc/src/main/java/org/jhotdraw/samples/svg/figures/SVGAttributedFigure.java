@@ -18,10 +18,11 @@ import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.STROKE_WIDTH;
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.samples.svg.SVGAttributeKeys;
+import org.jhotdraw.samples.svg.Gradient;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
 import org.jhotdraw.util.*;
 
-/**
+/*"Main.ftf" "SVGApplicationModel.ftf" "SVGBezierFigure.ftf" "SVGEllipseFigure.ftf" "SVGImageFigure.ftf" "SVGTextAreaFigure.ftf"*
  * SVGAttributedFigure.
  *
  * @author Werner Randelshofer
@@ -124,5 +125,28 @@ public abstract class SVGAttributedFigure extends AbstractAttributedFigure {
             });
         }
         return actions;
+    }
+
+    public void transform2DPoint(AffineTransform tx) {
+        Point2D.Double anchor = getStartPoint();
+        Point2D.Double lead = getEndPoint();
+        setBounds(
+                (Point2D.Double) tx.transform(anchor, anchor),
+                (Point2D.Double) tx.transform(lead, lead));
+    }
+
+    public void transformAccessories(AffineTransform tx){
+        if (FILL_GRADIENT.get(this) != null &&
+                !FILL_GRADIENT.get(this).isRelativeToFigureBounds()) {
+            Gradient g = FILL_GRADIENT.getClone(this);
+            g.transform(tx);
+            FILL_GRADIENT.set(this, g);
+        }
+        if (STROKE_GRADIENT.get(this) != null &&
+                !STROKE_GRADIENT.get(this).isRelativeToFigureBounds()) {
+            Gradient g = STROKE_GRADIENT.getClone(this);
+            g.transform(tx);
+            STROKE_GRADIENT.set(this, g);
+        }
     }
 }

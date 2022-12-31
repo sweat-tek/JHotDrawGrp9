@@ -84,6 +84,7 @@ public abstract class AbstractApplicationModel extends AbstractBean
      *
      * @param newValue the class name
      */
+    //@FeatureEntryPoint(value = "setViewClassName")
     public void setViewClassName(String newValue) {
         String oldValue = viewClassName;
         viewClassName = newValue;
