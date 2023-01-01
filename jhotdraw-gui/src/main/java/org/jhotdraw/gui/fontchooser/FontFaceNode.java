@@ -10,6 +10,7 @@ package org.jhotdraw.gui.fontchooser;
 import java.awt.Font;
 import java.util.Collections;
 import java.util.Enumeration;
+import java.util.Map;
 import javax.swing.tree.MutableTreeNode;
 import javax.swing.tree.TreeNode;
 
@@ -24,62 +25,21 @@ public class FontFaceNode implements MutableTreeNode, Comparable<FontFaceNode>, 
     private FontFamilyNode parent;
     private Font typeface;
     private String name;
+    Map<String, String> fontsDictionary = FontsDictionary.getInstance().fonts;
+
+    public FontFaceNode(){
+
+    }
 
     public FontFaceNode(Font typeface) {
         this.typeface = typeface;
         this.name = beautifyName(typeface.getPSName());
     }
 
-    protected String beautifyName(String name) {
-        // 'Beautify' the name
-        int p = name.lastIndexOf('-');
-        if (p != -1) {
-            name = name.substring(p + 1);
-            String lcName = name.toLowerCase();
-            if ("plain".equals(lcName)) {
-                name = "Plain";
-            } else if ("bolditalic".equals(lcName)) {
-                name = "Bold Italic";
-            } else if ("italic".equals(lcName)) {
-                name = "Italic";
-            } else if ("bold".equals(lcName)) {
-                name = "Bold";
-            }
-        } else {
-            String lcName = name.toLowerCase();
-            if (lcName.endsWith("plain")) {
-                name = "Plain";
-            } else if (lcName.endsWith("boldoblique")) {
-                name = "Bold Oblique";
-            } else if (lcName.endsWith("bolditalic")) {
-                name = "Bold Italic";
-            } else if (lcName.endsWith("bookita")) {
-                name = "Book Italic";
-            } else if (lcName.endsWith("bookit")) {
-                name = "Book Italic";
-            } else if (lcName.endsWith("demibold")) {
-                name = "Demi Bold";
-            } else if (lcName.endsWith("semiita")) {
-                name = "Semi Italic";
-            } else if (lcName.endsWith("italic")) {
-                name = "Italic";
-            } else if (lcName.endsWith("book")) {
-                name = "Book";
-            } else if (lcName.endsWith("bold")) {
-                name = "Bold";
-            } else if (lcName.endsWith("bol")) {
-                name = "Bold";
-            } else if (lcName.endsWith("oblique")) {
-                name = "Oblique";
-            } else if (lcName.endsWith("regular")) {
-                name = "Regular";
-            } else if (lcName.endsWith("semi")) {
-                name = "Semi";
-            } else {
-                name = "Plain";
-            }
-        }
+
+    public String addSpacesToString(String name){
         StringBuilder buf = new StringBuilder();
+
         char prev = name.charAt(0);
         buf.append(prev);
         for (int i = 1; i < name.length(); i++) {
@@ -94,6 +54,25 @@ public class FontFaceNode implements MutableTreeNode, Comparable<FontFaceNode>, 
         }
         name = buf.toString();
         return name;
+    }
+
+    public String beautifyName(String name) {
+        // 'Beautify' the name
+        int p = name.lastIndexOf('-');
+        name = name.substring(p + 1);
+        String lcName = name.toLowerCase();
+        if (p != -1) {
+            if(fontsDictionary.containsKey(lcName)){
+                name = fontsDictionary.get(lcName);
+            }
+        } else {
+            if(fontsDictionary.containsKey(lcName)){
+                fontsDictionary.get(lcName);
+            }else{
+                name = "Plain";
+            }
+        }
+        return addSpacesToString(name);
     }
 
     public void setName(String newValue) {

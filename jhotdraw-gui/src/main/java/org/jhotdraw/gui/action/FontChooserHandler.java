@@ -61,35 +61,29 @@ public class FontChooserHandler extends AbstractSelectedAction
         popupMenu.setVisible(false);
     }
 
-    protected void applySelectedFontToFigures() {
+    public void applySelectedFontToFigures() {
         final ArrayList<Figure> selectedFigures = new ArrayList<>(getView().getSelectedFigures());
         final ArrayList<Object> restoreData = new ArrayList<>(selectedFigures.size());
         for (Figure figure : selectedFigures) {
             restoreData.add(figure.getAttributesRestoreData());
             figure.willChange();
+            //figure.get(key,);
             figure.set(key, fontChooser.getSelectedFont());
             figure.changed();
         }
         getEditor().setDefaultAttribute(key, fontChooser.getSelectedFont());
         final Font undoValue = fontChooser.getSelectedFont();
+        UndoableEdit edit = undoableEdit(selectedFigures, restoreData, undoValue);
+        fireUndoableEditHappened(edit);
+    }
+
+    public UndoableEdit undoableEdit(ArrayList<Figure> selectedFigures, ArrayList<Object> restoreData, Font undoValue){
         UndoableEdit edit = new AbstractUndoableEdit() {
             private static final long serialVersionUID = 1L;
-
             @Override
             public String getPresentationName() {
                 return AttributeKeys.FONT_FACE.getPresentationName();
-                /*
-            String name = (String) getValue(Actions.UNDO_PRESENTATION_NAME_KEY);
-            if (name == null) {
-            name = (String) getValue(AbstractAction.NAME);
             }
-            if (name == null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
-            name = labels.getString("attribute.text");
-            }
-            return name;*/
-            }
-
             @Override
             public void undo() {
                 super.undo();
@@ -100,7 +94,6 @@ public class FontChooserHandler extends AbstractSelectedAction
                     figure.changed();
                 }
             }
-
             @Override
             public void redo() {
                 super.redo();
@@ -112,7 +105,7 @@ public class FontChooserHandler extends AbstractSelectedAction
                 }
             }
         };
-        fireUndoableEditHappened(edit);
+        return edit;
     }
 
     @Override

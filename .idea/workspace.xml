@@ -4,38 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d085ca8-8597-4e36-93b1-b49d1ca8b397" name="Changes" comment="Extracted method from children into parent">
-      <change afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/draw/DefaultPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/resources/META-INF/aop.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/test/java/org/jhotdraw/samples/svg/MainTest.java" afterDir="false" />
+    <list default="true" id="27b2dbe9-3351-4651-bf15-2495da1f6cdc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractApplicationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractApplicationModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/AbstractView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/SDIApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-app/src/main/java/org/jhotdraw/app/SDIApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-core/src/main/java/org/jhotdraw/draw/DefaultDrawingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-core/src/main/java/org/jhotdraw/draw/DefaultDrawingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-core/src/main/java/org/jhotdraw/draw/GridConstrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-core/src/main/java/org/jhotdraw/draw/GridConstrainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/draw/DrawingPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/draw/DrawingPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/SVGApplicationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/SVGApplicationModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/SVGView.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/SVGView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/gui/CanvasToolBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/jhotdraw-samples/jhotdraw-samples-misc/src/main/java/org/jhotdraw/samples/svg/gui/CanvasToolBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.16.1/lib/src.zip!/java.desktop/javax/swing/JComponent.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://$USER_HOME$/.jdks/semeru-1.8.0_345/src.zip!/javax/swing/ActionMap.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,19 +39,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danny/githubprojects/JHotDrawGrp9&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/danny/githubprojects/example/SB-MAI-E21-5/JHotDraw",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danny\githubprojects\JHotDrawGrp9\jhotdraw-gui\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.jhotdraw.samples.svg.Main" />
@@ -79,32 +71,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FontPaletteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jhotdraw-samples-misc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.jhotdraw.samples.svg.*" />
+          <option name="PATTERN" value="JGivenFontPalette.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.jhotdraw.samples.svg" />
-      <option name="MAIN_CLASS_NAME" value="org.jhotdraw.samples.svg.MainTest" />
+      <option name="PACKAGE_NAME" value="JGivenFontPalette" />
+      <option name="MAIN_CLASS_NAME" value="JGivenFontPalette.FontPaletteTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.testMain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FontPaletteTest.selectBoldText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jhotdraw-samples-misc" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.jhotdraw.samples.svg.*" />
+          <option name="PATTERN" value="JGivenFontPalette.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.jhotdraw.samples.svg" />
-      <option name="MAIN_CLASS_NAME" value="org.jhotdraw.samples.svg.MainTest" />
-      <option name="METHOD_NAME" value="testMain" />
+      <option name="PACKAGE_NAME" value="JGivenFontPalette" />
+      <option name="MAIN_CLASS_NAME" value="JGivenFontPalette.FontPaletteTest" />
+      <option name="METHOD_NAME" value="selectBoldText" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FontPaletteTest.selectItalicText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jhotdraw-samples-misc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JGivenFontPalette.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="JGivenFontPalette" />
+      <option name="MAIN_CLASS_NAME" value="JGivenFontPalette.FontPaletteTest" />
+      <option name="METHOD_NAME" value="selectItalicText" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FontPaletteTest.underlineText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jhotdraw-samples-misc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JGivenFontPalette.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="JGivenFontPalette" />
+      <option name="MAIN_CLASS_NAME" value="JGivenFontPalette.FontPaletteTest" />
+      <option name="METHOD_NAME" value="underlineText" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,21 +136,25 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.MainTest.testMain" />
-      <item itemvalue="JUnit.MainTest" />
+      <item itemvalue="JUnit.FontPaletteTest" />
+      <item itemvalue="JUnit.FontPaletteTest.selectBoldText" />
+      <item itemvalue="JUnit.FontPaletteTest.selectItalicText" />
+      <item itemvalue="JUnit.FontPaletteTest.underlineText" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MainTest.testMain" />
-        <item itemvalue="JUnit.MainTest" />
+        <item itemvalue="JUnit.FontPaletteTest" />
+        <item itemvalue="JUnit.FontPaletteTest.underlineText" />
+        <item itemvalue="JUnit.FontPaletteTest.selectBoldText" />
+        <item itemvalue="JUnit.FontPaletteTest.selectItalicText" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6d085ca8-8597-4e36-93b1-b49d1ca8b397" name="Changes" comment="" />
+      <changelist id="27b2dbe9-3351-4651-bf15-2495da1f6cdc" name="Changes" comment="" />
       <created>1665487376662</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -138,15 +166,14 @@
       <workItem from="1668201227851" duration="10297000" />
       <workItem from="1668438292284" duration="1421000" />
       <workItem from="1668515294444" duration="6703000" />
+      <workItem from="1669056400319" duration="5006000" />
+      <workItem from="1669115914640" duration="12347000" />
+      <workItem from="1672230370537" duration="897000" />
+      <workItem from="1672311319975" duration="2720000" />
+      <workItem from="1672328295838" duration="148000" />
+      <workItem from="1672328458604" duration="4538000" />
+      <workItem from="1672393547160" duration="31537000" />
     </task>
-    <task id="LOCAL-00001" summary="Extracted method from children into parent">
-      <created>1671890460242</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1671890460242</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,9 +190,20 @@
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Extracted method from children into parent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extracted method from children into parent" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="46" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.awt.Font" memberName="size" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,0 +1,352 @@
+{
+  "className": "JGivenFontPalette.FontPaletteTest",
+  "name": "Font Palette",
+  "scenarios": [
+    {
+      "className": "JGivenFontPalette.FontPaletteTest",
+      "testMethodName": "selectBoldText",
+      "description": "Select bold text",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "a text figure",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a text figure"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 76082100,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "bold font button pressed",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "bold font button pressed"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 77005600,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "text has changed to bold",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "text has changed to bold"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 519400,
+              "depth": 0,
+              "parentFailed": false
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "durationInNanos": 2674015900
+        }
+      ],
+      "casesAsTable": false,
+      "durationInNanos": 2674015900
+    },
+    {
+      "className": "JGivenFontPalette.FontPaletteTest",
+      "testMethodName": "selectItalicText",
+      "description": "Select italic text",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "a text figure",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a text figure"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 5502800,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "italic font button pressed",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "italic font button pressed"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 10544000,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "text has changed to italic",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "text has changed to italic"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 471400,
+              "depth": 0,
+              "parentFailed": false
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "durationInNanos": 61145900
+        }
+      ],
+      "casesAsTable": false,
+      "durationInNanos": 61145900
+    },
+    {
+      "className": "JGivenFontPalette.FontPaletteTest",
+      "testMethodName": "changeFontFace",
+      "description": "Change font face",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "a text figure",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a text figure"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 4293500,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "i change font face",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "i change font face"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 8124700,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "text font face has changed",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "text font face has changed"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 469400,
+              "depth": 0,
+              "parentFailed": false
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "durationInNanos": 49052400
+        }
+      ],
+      "casesAsTable": false,
+      "durationInNanos": 49052400
+    },
+    {
+      "className": "JGivenFontPalette.FontPaletteTest",
+      "testMethodName": "changeFontSize",
+      "description": "Change font size",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "a text figure",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a text figure"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 3482000,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "i change font size",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "i change font size"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 15132200,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "text font size has changed",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "text font size has changed"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 428600,
+              "depth": 0,
+              "parentFailed": false
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "durationInNanos": 49756500
+        }
+      ],
+      "casesAsTable": false,
+      "durationInNanos": 49756500
+    },
+    {
+      "className": "JGivenFontPalette.FontPaletteTest",
+      "testMethodName": "underlineText",
+      "description": "Underline text",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "a text figure",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a text figure"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 6084100,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "underline font button pressed",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "underline font button pressed"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 86668000,
+              "depth": 0,
+              "parentFailed": false
+            },
+            {
+              "name": "text has changed been underlined",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "text has changed been underlined"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 322100,
+              "depth": 0,
+              "parentFailed": false
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "durationInNanos": 135187000
+        }
+      ],
+      "casesAsTable": false,
+      "durationInNanos": 135187000
+    }
+  ],
+  "tagMap": {}
+}
