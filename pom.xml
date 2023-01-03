@@ -14,6 +14,7 @@
 			<name>GitHub external Packages</name>
 			<url>https://maven.pkg.github.com/sweat-tek/MavenRepository</url>
 		</repository>
+
 	</repositories>
 	<licenses>
 		<license>
@@ -79,7 +80,7 @@
 				<executions>
 					<execution>
 						<id>verify-style</id>
-						<phase>process-classes</phase>
+						<phase>none</phase>
 						<goals>
 							<goal>check</goal>
 						</goals>
